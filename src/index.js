@@ -63,4 +63,32 @@ export default class AllSorts {
 	}
 
 	// 4. Optimized Coctail Shaker Sort
+	shakerOpt(arr) {
+		if (arr.length === 0 || arr.length === 1) return arr;
+		let sorted = false;
+		let changesCount = 0;
+		let edgeLeft = 0;
+		let edgeRight = arr.length - 1;
+		while(sorted === false) {
+			for(let i = edgeLeft; i <= edgeRight; i++) {
+				if (arr[i] > arr[i + 1]) {
+					[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+					changesCount += 1;
+				}
+			}
+			for (let j = edgeRight; j >= edgeLeft; j--) {
+				if (j > 0 && arr[j] < arr[j - 1]) {
+					[arr[j - 1], arr[j]] = [arr[j], arr[j - 1]];
+					changesCount += 1;
+				}
+				if (j === edgeLeft) {
+					sorted = changesCount > 0 ? false : true;
+					changesCount = 0;
+				}
+			}
+			edgeLeft += 1;
+			edgeRight -= 1;
+		}
+		return arr;
+	}
 }

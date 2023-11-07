@@ -15,4 +15,9 @@ test('bubble sort', () => {
 	expect(sorts.bubble([])).toStrictEqual([]);
 	expect(sorts.bubble(ex1)).toStrictEqual(sorted1);
 	expect(sorts.bubble(ex2)).toStrictEqual(sorted2);
+});
+test('optimized bubble sort', () => {
+	expect(sorts.bubbleOpt([])).toStrictEqual([]);
+	expect(sorts.bubbleOpt(ex1)).toStrictEqual(sorted1);
+	expect(sorts.bubbleOpt(ex2)).toStrictEqual(sorted2);
 })

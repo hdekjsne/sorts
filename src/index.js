@@ -4,13 +4,12 @@ export default class AllSorts {
 	bubble(arr) {
 		let changesCount = 0;
 		for(let i = 0; i < arr.length; i += 1) {
-			console.log(i);
 			if (arr[i] > arr[i + 1]) {
 				[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
 				changesCount += 1;
 			}
 			if (i === arr.length - 1) {
-				i = (changesCount > 0 ? 0 : i + 2);
+				i = (changesCount > 0 ? -1 : i + 2);
 				changesCount = 0;
 			}
 		}

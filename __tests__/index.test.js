@@ -36,3 +36,9 @@ test('optimized coctail shaker sort', () => {
 	expect(sorts.shakerOpt(ex2)).toStrictEqual(sorted2);
 	expect(sorts.shakerOpt(ex3)).toStrictEqual(ex3);
 });
+test('quick sort', () => {
+	expect(sorts.quick([])).toStrictEqual([]);
+	expect(sorts.quick(ex1)).toStrictEqual(sorted1);
+	expect(sorts.quick(ex2)).toStrictEqual(sorted2);
+	expect(sorts.quick(ex3)).toStrictEqual(ex3);
+});

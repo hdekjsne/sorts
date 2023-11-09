@@ -91,4 +91,20 @@ export default class AllSorts {
 		}
 		return arr;
 	}
+
+	// ?. Quicksort
+	quick(arr) {
+		if (arr.length === 0 || arr.length === 1) return arr;
+		else if (arr.length === 2) return arr[0] <= arr[1] ? arr : [arr[1], arr[0]];
+		const pivot = arr[Math.floor(arr.length / 2)];
+		const pivotIndex = Math.floor(arr.length / 2);
+		arr = arr.reduce((acc, item, index) => {
+			if (index === pivotIndex) return acc;
+			if (item < pivot) acc.unshift(item);
+			else if (item >= pivot) acc.push(item);
+			return acc;
+		}, [pivot]);
+		return [...this.quick(arr.slice(0, arr.indexOf(pivot))), pivot, ...this.quick(arr.slice(arr.indexOf(pivot) + 1))];
+	}
 }
+

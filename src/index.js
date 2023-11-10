@@ -209,6 +209,9 @@ export default class AllSorts {
 		}
 		return arr;
 	}
+
+	// 12. Double Selection Sort
+	static doubleSelection(arr) {}
 	
 	// 17. Cycle Sort
 	static cycle(arr) { }

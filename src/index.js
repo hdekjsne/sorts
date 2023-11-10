@@ -211,8 +211,35 @@ export default class AllSorts {
 	}
 
 	// 12. Double Selection Sort
-	static doubleSelection(arr) {}
-	
+	static doubleSelection(arr) {
+		let leftEdge = 0;
+		let rightEdge = arr.length - 1;
+		for (let i = 0; i < rightEdge - 1; i ++) {
+			let min = Infinity;
+			let max = -Infinity;
+			let minIndex;
+			let maxIndex;
+			for (let j = leftEdge; j <= rightEdge; j++) {
+				if (arr[j] < min) {
+					min = arr[j];
+					minIndex = j;
+				}
+				else if (arr[j] > max) {
+					max = arr[j];
+					maxIndex = j;
+				}
+			}
+			arr.splice(minIndex, 1);
+			arr.splice(maxIndex - 1, 1);
+			arr = [...arr.slice(0, leftEdge), min, ...arr.slice(leftEdge, rightEdge - 1), max, ...arr.slice(rightEdge - 1)];
+			console.log(min, max);
+			console.log(arr);
+			leftEdge += 1;
+			rightEdge -= 1;
+		}
+		return arr;
+	}
+
 	// 17. Cycle Sort
 	static cycle(arr) { }
 

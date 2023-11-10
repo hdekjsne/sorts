@@ -144,7 +144,12 @@ export default class AllSorts {
 	}
 
 	// 10. Circle Sort
-	static circle(arr) {}
+	static circle(arr) {
+		for( let i = 0; i < arr.length / 2; i++) {
+			if (arr[i] > arr[arr.length - i]) [arr[i], arr[arr.length - i]] = [arr[arr.length - i], arr[i]];
+		}
+		return [...this.circle(arr.slice(0, Math.floor(arr.length / 2))), ...this.circle(Math.floor(arr.length / 2))];
+	}
 
 	// 17. Cycle Sort
 	static cycle(arr) {}

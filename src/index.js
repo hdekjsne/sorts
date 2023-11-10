@@ -103,10 +103,6 @@ export default class AllSorts {
 					changesCount += 1;
 				}
 			}
-			if (changesCount === 0) {
-				sorted = true;
-				break;
-			};
 			for (let i = 0; i < arr.length; i += 2) {
 				if (arr[i] > arr[i + 1]) {
 					[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
@@ -129,6 +125,8 @@ export default class AllSorts {
 		}
 		return arr;
 	}
+
+	// 9. Comb Sort
 
 	// 17. Cycle Sort
 	cycle(arr) {}

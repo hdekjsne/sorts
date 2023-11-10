@@ -1,9 +1,9 @@
 export default class AllSorts {
-	
+
 	// 1. Bubble Sort
 	static bubble(arr) {
 		let changesCount = 0;
-		for(let i = 0; i < arr.length; i += 1) {
+		for (let i = 0; i < arr.length; i += 1) {
 			if (arr[i] > arr[i + 1]) {
 				[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
 				changesCount += 1;
@@ -13,7 +13,7 @@ export default class AllSorts {
 				changesCount = 0;
 			}
 		}
-		return arr;	
+		return arr;
 	}
 
 	// 2. Optimized Bubble Sort
@@ -21,7 +21,7 @@ export default class AllSorts {
 		let changesCount = 0;
 		let i = 0;
 		let lastElIndex = arr.length - 1;
-		while(i <= lastElIndex) {
+		while (i <= lastElIndex) {
 			if (arr[i] > arr[i + 1]) {
 				[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
 				changesCount += 1;
@@ -38,10 +38,10 @@ export default class AllSorts {
 
 	// 3. Coctail Shaker Sort
 	static shaker(arr) {
-		if (arr.length === 0 || arr.length === 1) return arr; 
+		if (arr.length === 0 || arr.length === 1) return arr;
 		let changesCount = 0;
 		let sorted = false;
-		while(sorted === false) {
+		while (sorted === false) {
 			for (let i = 0; i < arr.length; i++) {
 				if (arr[i] > arr[i + 1]) {
 					[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
@@ -69,8 +69,8 @@ export default class AllSorts {
 		let changesCount = 0;
 		let edgeLeft = 0;
 		let edgeRight = arr.length - 1;
-		while(sorted === false) {
-			for(let i = edgeLeft; i <= edgeRight; i++) {
+		while (sorted === false) {
+			for (let i = edgeLeft; i <= edgeRight; i++) {
 				if (arr[i] > arr[i + 1]) {
 					[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
 					changesCount += 1;
@@ -97,7 +97,7 @@ export default class AllSorts {
 		let sorted = false;
 		let changesCount = 0;
 		while (!sorted) {
-			for(let i = 1; i < arr.length; i += 2) {
+			for (let i = 1; i < arr.length; i += 2) {
 				if (arr[i] > arr[i + 1]) {
 					[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
 					changesCount += 1;
@@ -117,7 +117,7 @@ export default class AllSorts {
 
 	// 6. Gnome Sort
 	static gnome(arr) {
-		for(let i = 1; i < arr.length; i++) {
+		for (let i = 1; i < arr.length; i++) {
 			if (arr[i] < arr[i - 1]) {
 				[arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
 				i -= 2;
@@ -126,7 +126,7 @@ export default class AllSorts {
 		return arr;
 	}
 
-	// 9. Comb Sort
+	// 7. Comb Sort
 	static comb(arr) {
 		if (arr.length === 0 || arr.length === 1) return arr;
 		let sorted = false;
@@ -143,18 +143,15 @@ export default class AllSorts {
 		return arr;
 	}
 
-	// 10. Circle Sort
+	// 8. Circle Sort
 	static circle(arr) {
-		for( let i = 0; i < arr.length / 2; i++) {
+		for (let i = 0; i < arr.length / 2; i++) {
 			if (arr[i] > arr[arr.length - i]) [arr[i], arr[arr.length - i]] = [arr[arr.length - i], arr[i]];
 		}
 		return [...this.circle(arr.slice(0, Math.floor(arr.length / 2))), ...this.circle(Math.floor(arr.length / 2))];
 	}
 
-	// 17. Cycle Sort
-	static cycle(arr) {}
-
-	// ?. Quicksort
+	// 9. Quicksort
 	static quick(arr) {
 		if (arr.length === 0 || arr.length === 1) return arr;
 		else if (arr.length === 2) return arr[0] <= arr[1] ? arr : [arr[1], arr[0]];
@@ -168,5 +165,30 @@ export default class AllSorts {
 		}, [pivot]);
 		return [...this.quick(arr.slice(0, arr.indexOf(pivot))), pivot, ...this.quick(arr.slice(arr.indexOf(pivot) + 1))];
 	}
+
+	// 10. Dual-Pivot Quicksort
+	static dpQuick(arr) {
+		if (arr.length === 0 || arr.length === 1) return arr;
+		else if (arr.length === 2) return arr[0] <= arr[1] ? arr : [arr[1], arr[0]];
+		let p1;
+		let p2;
+		if (arr[0] > arr[arr.length - 1]) {
+			[arr[0], arr[arr.length - 1]] = [arr[arr.length - 1], arr[0]];
+		}
+		p1 = arr[0];
+		p2 = arr[arr.length - 1]
+		arr = arr.reduce((acc, item, index) => {
+			if (index === 0 || index === arr.length - 1) return acc;
+			if (item < p1) acc[0].push(item);
+			else if (item >= p1 && item <= p2) acc[1].push(item);
+			else if (item > p2) acc[2].push(item);
+			return acc;
+		}, [[], [], []]);
+		return [...this.dpQuick(arr[0]), p1, ...this.dpQuick(arr[1]), p2, ...this.dpQuick(arr[2])];
+	}
+
+	// 17. Cycle Sort
+	static cycle(arr) { }
+
 }
 

@@ -41,12 +41,6 @@ test('optimized coctail shaker sort', () => {
 	expect(AllSorts.shakerOpt(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.shakerOpt(ex3)).toStrictEqual(ex3);
 });
-test('quick sort', () => {
-	expect(AllSorts.quick([])).toStrictEqual([]);
-	expect(AllSorts.quick(ex1)).toStrictEqual(sorted1);
-	expect(AllSorts.quick(ex2)).toStrictEqual(sorted2);
-	expect(AllSorts.quick(ex3)).toStrictEqual(ex3);
-});
 test('odd-even sort', () => {
 	expect(AllSorts.oddEven([])).toStrictEqual([]);
 	expect(AllSorts.oddEven(ex1)).toStrictEqual(sorted1);
@@ -70,4 +64,16 @@ test('circle sort', () => {
 	expect(AllSorts.comb(ex1)).toStrictEqual(sorted1);
 	expect(AllSorts.comb(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.comb(ex3)).toStrictEqual(ex3);
+});
+test('quicksort', () => {
+	expect(AllSorts.quick([])).toStrictEqual([]);
+	expect(AllSorts.quick(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.quick(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.quick(ex3)).toStrictEqual(ex3);
+});
+test('dual-pivot quicksort', () => {
+	expect(AllSorts.dpQuick([])).toStrictEqual([]);
+	expect(AllSorts.dpQuick(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.dpQuick(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.dpQuick(ex3)).toStrictEqual(ex3);
 });

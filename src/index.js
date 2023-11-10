@@ -1,7 +1,7 @@
 export default class AllSorts {
 	
 	// 1. Bubble Sort
-	bubble(arr) {
+	static bubble(arr) {
 		let changesCount = 0;
 		for(let i = 0; i < arr.length; i += 1) {
 			if (arr[i] > arr[i + 1]) {
@@ -17,7 +17,7 @@ export default class AllSorts {
 	}
 
 	// 2. Optimized Bubble Sort
-	bubbleOpt(arr) {
+	static bubbleOpt(arr) {
 		let changesCount = 0;
 		let i = 0;
 		let lastElIndex = arr.length - 1;
@@ -37,7 +37,7 @@ export default class AllSorts {
 	}
 
 	// 3. Coctail Shaker Sort
-	shaker(arr) {
+	static shaker(arr) {
 		if (arr.length === 0 || arr.length === 1) return arr; 
 		let changesCount = 0;
 		let sorted = false;
@@ -63,7 +63,7 @@ export default class AllSorts {
 	}
 
 	// 4. Optimized Coctail Shaker Sort
-	shakerOpt(arr) {
+	static shakerOpt(arr) {
 		if (arr.length === 0 || arr.length === 1) return arr;
 		let sorted = false;
 		let changesCount = 0;
@@ -93,7 +93,7 @@ export default class AllSorts {
 	}
 
 	// 5. Odd-Even Sort
-	oddEven(arr) {
+	static oddEven(arr) {
 		let sorted = false;
 		let changesCount = 0;
 		while (!sorted) {
@@ -116,7 +116,7 @@ export default class AllSorts {
 	}
 
 	// 6. Gnome Sort
-	gnome(arr) {
+	static gnome(arr) {
 		for(let i = 1; i < arr.length; i++) {
 			if (arr[i] < arr[i - 1]) {
 				[arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
@@ -127,7 +127,7 @@ export default class AllSorts {
 	}
 
 	// 9. Comb Sort
-	comb(arr) {
+	static comb(arr) {
 		if (arr.length === 0 || arr.length === 1) return arr;
 		let sorted = false;
 		let distance = arr.length;
@@ -143,11 +143,14 @@ export default class AllSorts {
 		return arr;
 	}
 
+	// 10. Circle Sort
+	static circle(arr) {}
+
 	// 17. Cycle Sort
-	cycle(arr) {}
+	static cycle(arr) {}
 
 	// ?. Quicksort
-	quick(arr) {
+	static quick(arr) {
 		if (arr.length === 0 || arr.length === 1) return arr;
 		else if (arr.length === 2) return arr[0] <= arr[1] ? arr : [arr[1], arr[0]];
 		const pivot = arr[Math.floor(arr.length / 2)];

@@ -1,62 +1,73 @@
 import AllSorts from "../src/index.js";
 
-const sorts = new AllSorts();
 let ex1;
 let ex2;
 const ex3 = [2, 4, 5, 8, 10, 22, 22, 100];
+// let ex4;
+// let ex5;
+// let ex6;
 const sorted1 = [0, 1, 5, 5, 6, 10, 20, 22, 25, 44, 80, 91, 100];
 const sorted2 = [0, 1, 1, 3, 4, 4, 5, 10, 38, 44, 90];
 
 beforeEach(() => {
 	ex1 = [1, 0, 10, 100, 20, 22, 25, 6, 5, 44, 91, 80, 5];
 	ex2 = [1, 4, 4, 5, 3, 10, 0, 90, 1, 44, 38];
+	// ex4 = [-9, -50, 100, 0, 1, 3, 6, 70, -100, 44, 3];
+	// ex4 = [0, -10, -2, -8, -9, -2, -1, 0];
+	// ex5 = [0.25, 0.4, 0, 0.75, 0.625, 0, -0.2];
 });
 
 test('bubble sort', () => {
-	expect(sorts.bubble([])).toStrictEqual([]);
-	expect(sorts.bubble(ex1)).toStrictEqual(sorted1);
-	expect(sorts.bubble(ex2)).toStrictEqual(sorted2);
-	expect(sorts.bubble(ex3)).toStrictEqual(ex3);
+	expect(AllSorts.bubble([])).toStrictEqual([]);
+	expect(AllSorts.bubble(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.bubble(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.bubble(ex3)).toStrictEqual(ex3);
 });
 test('optimized bubble sort', () => {
-	expect(sorts.bubbleOpt([])).toStrictEqual([]);
-	expect(sorts.bubbleOpt(ex1)).toStrictEqual(sorted1);
-	expect(sorts.bubbleOpt(ex2)).toStrictEqual(sorted2);
-	expect(sorts.bubbleOpt(ex3)).toStrictEqual(ex3);
+	expect(AllSorts.bubbleOpt([])).toStrictEqual([]);
+	expect(AllSorts.bubbleOpt(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.bubbleOpt(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.bubbleOpt(ex3)).toStrictEqual(ex3);
 });
 test('coctail shaker sort', () => {
-	expect(sorts.shaker([])).toStrictEqual([]);
-	expect(sorts.shaker(ex1)).toStrictEqual(sorted1);
-	expect(sorts.shaker(ex2)).toStrictEqual(sorted2);
-	expect(sorts.shaker(ex3)).toStrictEqual(ex3);
+	expect(AllSorts.shaker([])).toStrictEqual([]);
+	expect(AllSorts.shaker(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.shaker(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.shaker(ex3)).toStrictEqual(ex3);
 });
 test('optimized coctail shaker sort', () => {
-	expect(sorts.shakerOpt([])).toStrictEqual([]);
-	expect(sorts.shakerOpt(ex1)).toStrictEqual(sorted1);
-	expect(sorts.shakerOpt(ex2)).toStrictEqual(sorted2);
-	expect(sorts.shakerOpt(ex3)).toStrictEqual(ex3);
+	expect(AllSorts.shakerOpt([])).toStrictEqual([]);
+	expect(AllSorts.shakerOpt(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.shakerOpt(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.shakerOpt(ex3)).toStrictEqual(ex3);
 });
 test('quick sort', () => {
-	expect(sorts.quick([])).toStrictEqual([]);
-	expect(sorts.quick(ex1)).toStrictEqual(sorted1);
-	expect(sorts.quick(ex2)).toStrictEqual(sorted2);
-	expect(sorts.quick(ex3)).toStrictEqual(ex3);
+	expect(AllSorts.quick([])).toStrictEqual([]);
+	expect(AllSorts.quick(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.quick(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.quick(ex3)).toStrictEqual(ex3);
 });
 test('odd-even sort', () => {
-	expect(sorts.oddEven([])).toStrictEqual([]);
-	expect(sorts.oddEven(ex1)).toStrictEqual(sorted1);
-	expect(sorts.oddEven(ex2)).toStrictEqual(sorted2);
-	expect(sorts.oddEven(ex3)).toStrictEqual(ex3);
+	expect(AllSorts.oddEven([])).toStrictEqual([]);
+	expect(AllSorts.oddEven(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.oddEven(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.oddEven(ex3)).toStrictEqual(ex3);
 });
 test('gnome sort', () => {
-	expect(sorts.gnome([])).toStrictEqual([]);
-	expect(sorts.gnome(ex1)).toStrictEqual(sorted1);
-	expect(sorts.gnome(ex2)).toStrictEqual(sorted2);
-	expect(sorts.gnome(ex3)).toStrictEqual(ex3);
+	expect(AllSorts.gnome([])).toStrictEqual([]);
+	expect(AllSorts.gnome(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.gnome(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.gnome(ex3)).toStrictEqual(ex3);
 });
 test('comb sort', () => {
-	expect(sorts.comb([])).toStrictEqual([]);
-	expect(sorts.comb(ex1)).toStrictEqual(sorted1);
-	expect(sorts.comb(ex2)).toStrictEqual(sorted2);
-	expect(sorts.comb(ex3)).toStrictEqual(ex3);
+	expect(AllSorts.comb([])).toStrictEqual([]);
+	expect(AllSorts.comb(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.comb(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.comb(ex3)).toStrictEqual(ex3);
+});
+test('circle sort', () => {
+	expect(AllSorts.comb([])).toStrictEqual([]);
+	expect(AllSorts.comb(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.comb(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.comb(ex3)).toStrictEqual(ex3);
 });

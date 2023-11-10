@@ -119,6 +119,17 @@ export default class AllSorts {
 		return arr;
 	}
 
+	// 6. Gnome Sort
+	gnome(arr) {
+		for(let i = 1; i < arr.length; i++) {
+			if (arr[i] < arr[i - 1]) {
+				[arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
+				i -= 2;
+			}
+		}
+		return arr;
+	}
+
 	// 17. Cycle Sort
 	cycle(arr) {}
 

@@ -77,3 +77,9 @@ test('dual-pivot quicksort', () => {
 	expect(AllSorts.dualQuick(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.dualQuick(ex3)).toStrictEqual(ex3);
 });
+test('selection sort', () => {
+	expect(AllSorts.selection([])).toStrictEqual([]);
+	expect(AllSorts.selection(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.selection(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.selection(ex3)).toStrictEqual(ex3);
+});

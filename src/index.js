@@ -188,7 +188,28 @@ export default class AllSorts {
 	}
 
 	// 11. Selection Sort
-
+	static selection(arr) {
+		let sortedCount = 0;
+		for(let i = 0; i < arr.length; i++) {
+			let min = Infinity;
+			let minIndex;
+			for(let j = sortedCount; j < arr.length; j++) {
+				if (arr[j] < min) {
+					min = arr[j];
+					minIndex = j;
+				};
+			}
+			if (min === arr[i]) {
+				sortedCount += 1;
+				continue;
+			}
+			arr.splice(minIndex, 1);
+			arr = [...arr.slice(0, sortedCount), min, ...arr.slice(sortedCount)];
+			sortedCount += 1;
+		}
+		return arr;
+	}
+	
 	// 17. Cycle Sort
 	static cycle(arr) { }
 

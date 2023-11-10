@@ -54,3 +54,9 @@ test('gnome sort', () => {
 	expect(sorts.gnome(ex2)).toStrictEqual(sorted2);
 	expect(sorts.gnome(ex3)).toStrictEqual(ex3);
 });
+test('comb sort', () => {
+	expect(sorts.comb([])).toStrictEqual([]);
+	expect(sorts.comb(ex1)).toStrictEqual(sorted1);
+	expect(sorts.comb(ex2)).toStrictEqual(sorted2);
+	expect(sorts.comb(ex3)).toStrictEqual(ex3);
+});

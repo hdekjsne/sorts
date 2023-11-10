@@ -127,6 +127,21 @@ export default class AllSorts {
 	}
 
 	// 9. Comb Sort
+	comb(arr) {
+		if (arr.length === 0 || arr.length === 1) return arr;
+		let sorted = false;
+		let distance = arr.length;
+		while (!sorted) {
+			for (let i = 0; i + distance < arr.length; i++) {
+				if (arr[i] > arr[i + distance]) {
+					[arr[i], arr[i + distance]] = [arr[i + distance], arr[i]];
+				}
+			}
+			distance -= 1;
+			if (distance === 0) sorted = true;
+		}
+		return arr;
+	}
 
 	// 17. Cycle Sort
 	cycle(arr) {}

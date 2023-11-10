@@ -167,7 +167,7 @@ export default class AllSorts {
 	}
 
 	// 10. Dual-Pivot Quicksort
-	static dpQuick(arr) {
+	static dualQuick(arr) {
 		if (arr.length === 0 || arr.length === 1) return arr;
 		else if (arr.length === 2) return arr[0] <= arr[1] ? arr : [arr[1], arr[0]];
 		let p1;
@@ -184,8 +184,10 @@ export default class AllSorts {
 			else if (item > p2) acc[2].push(item);
 			return acc;
 		}, [[], [], []]);
-		return [...this.dpQuick(arr[0]), p1, ...this.dpQuick(arr[1]), p2, ...this.dpQuick(arr[2])];
+		return [...this.dualQuick(arr[0]), p1, ...this.dualQuick(arr[1]), p2, ...this.dualQuick(arr[2])];
 	}
+
+	// 11. Selection Sort
 
 	// 17. Cycle Sort
 	static cycle(arr) { }

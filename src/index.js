@@ -92,6 +92,32 @@ export default class AllSorts {
 		return arr;
 	}
 
+	// 5. Odd-Even Sort
+	oddEven(arr) {
+		let sorted = false;
+		let changesCount = 0;
+		while (!sorted) {
+			for(let i = 1; i < arr.length; i += 2) {
+				if (arr[i] > arr[i + 1]) {
+					[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+					changesCount += 1;
+				}
+			}
+			for (let i = 0; i < arr.length; i += 2) {
+				if (arr[i] > arr[i + 1]) {
+					[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+					changesCount += 1;
+				}
+			}
+			if (changesCount === 0) sorted = true;
+			changesCount = 0;
+		}
+		return arr;
+	}
+
+	// 17. Cycle Sort
+	cycle(arr) {}
+
 	// ?. Quicksort
 	quick(arr) {
 		if (arr.length === 0 || arr.length === 1) return arr;

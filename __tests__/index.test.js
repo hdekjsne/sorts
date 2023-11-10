@@ -42,3 +42,9 @@ test('quick sort', () => {
 	expect(sorts.quick(ex2)).toStrictEqual(sorted2);
 	expect(sorts.quick(ex3)).toStrictEqual(ex3);
 });
+test('odd-even sort', () => {
+	expect(sorts.oddEven([])).toStrictEqual([]);
+	expect(sorts.oddEven(ex1)).toStrictEqual(sorted1);
+	expect(sorts.oddEven(ex2)).toStrictEqual(sorted2);
+	expect(sorts.oddEven(ex3)).toStrictEqual(ex3);
+});

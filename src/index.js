@@ -255,5 +255,8 @@ export default class AllSorts {
 		}
 		return arr;
 	}
+
+	// 14. Heapsort
+	static heap() {}
 }
 

@@ -211,6 +211,7 @@ export default class AllSorts {
 	}
 
 	// 12. Double Selection Sort
+	// requires refactoring
 	static doubleSelection(arr) {
 		let leftEdge = 0;
 		let rightEdge = arr.length - 1;
@@ -240,7 +241,7 @@ export default class AllSorts {
 		return arr;
 	}
 
-	// 17. Cycle Sort
+	// 13. Cycle Sort
 	static cycle(arr) { }
 
 }

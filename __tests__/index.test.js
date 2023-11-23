@@ -91,3 +91,9 @@ test('double selection sort', () => {
 	expect(AllSorts.doubleSelection(ex3)).toStrictEqual(ex3);
 });
 */
+test('cycle sort', () => {
+	expect(AllSorts.cycle([])).toStrictEqual([]);
+	expect(AllSorts.cycle(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.cycle(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.cycle(ex3)).toStrictEqual(ex3);
+});

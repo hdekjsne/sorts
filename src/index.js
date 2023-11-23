@@ -255,8 +255,8 @@ export default class AllSorts {
 		}
 		return arr;
 	}
-
-	// 14. Heapsort
-	static heap() {}
+	
+	// 14. Insertion Sort
+	static insertion(arr) {}
 }
 

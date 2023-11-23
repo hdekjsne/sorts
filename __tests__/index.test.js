@@ -97,9 +97,9 @@ test('cycle sort', () => {
 	expect(AllSorts.cycle(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.cycle(ex3)).toStrictEqual(ex3);
 });
-test('heap sort', () => {
-	expect(AllSorts.heap([])).toStrictEqual([]);
-	expect(AllSorts.heap(ex1)).toStrictEqual(sorted1);
-	expect(AllSorts.heap(ex2)).toStrictEqual(sorted2);
-	expect(AllSorts.heap(ex3)).toStrictEqual(ex3);
+test('insertion sort', () => {
+	expect(AllSorts.insertion([])).toStrictEqual([]);
+	expect(AllSorts.insertion(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.insertion(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.insertion(ex3)).toStrictEqual(ex3);
 });

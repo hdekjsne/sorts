@@ -242,7 +242,18 @@ export default class AllSorts {
 	}
 
 	// 13. Cycle Sort
-	static cycle(arr) { }
-
+	static cycle(arr) {
+		let temp = Infinity;
+		for (let i = 0; i < arr.length; i++) {
+			temp = i;
+			for (let j = i + 1; j < arr.length; j++) {
+				if (arr[j] < arr[temp]) temp = j;
+			}
+			if (arr[temp] < arr[i]) [arr[i], arr[temp]] = [arr[temp], arr[i]];
+			console.log(temp);
+			console.log(arr);
+		}
+		return arr;
+	}
 }
 

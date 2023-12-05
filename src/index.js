@@ -250,13 +250,27 @@ export default class AllSorts {
 				if (arr[j] < arr[temp]) temp = j;
 			}
 			if (arr[temp] < arr[i]) [arr[i], arr[temp]] = [arr[temp], arr[i]];
-			console.log(temp);
-			console.log(arr);
 		}
 		return arr;
 	}
 	
 	// 14. Insertion Sort
-	static insertion(arr) {}
+	static insertion(arr) {
+		let edge = 0;
+		for (let i = 1; i < arr.length; i++) {
+			for (let j = edge; j > -1; j--) {
+				if (arr[i] >= arr[j]) {
+					arr = [...arr.slice(0, j + 1), arr[i], ...arr.slice(j + 1)];
+					arr.splice(i + 1, 1);
+					break;
+				} else if (j === 0) {
+					arr = [arr[i], ...arr];
+					arr.splice(i + 1, 1);	
+				}
+			}
+			edge += 1;
+		}
+		return arr;
+	}
 }
 

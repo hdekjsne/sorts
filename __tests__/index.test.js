@@ -103,3 +103,9 @@ test('insertion sort', () => {
 	expect(AllSorts.insertion(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.insertion(ex3)).toStrictEqual(ex3);
 });
+test('shell sort', () => {
+	expect(AllSorts.shell([])).toStrictEqual([]);
+	expect(AllSorts.shell(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.shell(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.shell(ex3)).toStrictEqual(ex3);
+});

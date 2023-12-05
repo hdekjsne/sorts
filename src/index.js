@@ -272,5 +272,9 @@ export default class AllSorts {
 		}
 		return arr;
 	}
+
+	// 15. Binary Insertion sort
+	// 16. Shell sort
+	static shell(arr) {}
 }
 

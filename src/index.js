@@ -297,5 +297,33 @@ export default class AllSorts {
 		}
 		return arr;
 	}
+
+	// 17. Patience sort
+	// 18. Unbalanced Tree sort
+	static tree(arr) {
+		const tree = {};
+		function addToTree(item, subtree = tree) {
+			if (subtree.value === undefined) {
+				subtree.value = item;
+				return;
+			}
+			if (item <= subtree.value) {
+				subtree.left ? addToTree(item, subtree.left) : subtree.left = { value: item };
+			} else {
+				subtree.right ? addToTree(item, subtree.right) : subtree.right = { value: item };
+			}
+		}
+
+		for (const item of arr) {
+			addToTree(item);
+		}
+
+		function makeArrFromTree(node) {
+			if (node === undefined) return [undefined];
+			return [...makeArrFromTree(node.left), node.value, ...makeArrFromTree(node.right)];
+		}
+		arr = makeArrFromTree(tree);
+		return arr.filter((item) => item !== undefined);
+	}
 }
 

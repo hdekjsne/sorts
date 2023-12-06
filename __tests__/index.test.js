@@ -109,3 +109,9 @@ test('shell sort', () => {
 	expect(AllSorts.shell(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.shell(ex3)).toStrictEqual(ex3);
 });
+test('unbalansed tree sort', () => {
+	expect(AllSorts.tree([])).toStrictEqual([]);
+	expect(AllSorts.tree(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.tree(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.tree(ex3)).toStrictEqual(ex3);
+});

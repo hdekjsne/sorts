@@ -276,6 +276,26 @@ export default class AllSorts {
 	
 	// 15. Binary Insertion sort
 	// 16. Shell sort
-	static shell(arr) {}
+	static shell(arr) {
+		for (let gap = Math.floor(arr.length / 2); gap > 0; gap = Math.floor(gap / 2)) {
+			let edge = gap - 1;
+			for (let i = gap * 2 - 1; i < arr.length; i += gap) {
+				if (arr[i] < arr[edge]) {
+					for (let j = edge; j >= 0; j -= gap) {
+						if (arr[i] > arr[j] && j <= edge) {
+							arr = [...arr.slice(0, j + 1), arr[i], ...arr.slice(j + 1)];
+							arr.splice(i + 1, 1);
+							break;
+						} else if (j === gap - 1 && arr[i] <= arr[edge]) {
+							arr = [arr[i], ...arr];
+							arr.splice(i + 1, 1);
+						}
+					}
+				}
+				edge += gap;
+			}
+		}
+		return arr;
+	}
 }
 

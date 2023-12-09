@@ -340,12 +340,6 @@ export default class AllSorts {
 		}
 
 		arr = sort(this.merge(arr.slice(0, Math.floor(arr.length / 2))), this.merge(arr.slice(Math.floor(arr.length / 2))));
-		/*
-		const arrMid = Math.floor(arr.length / 2);
-		const firstHalf = arr.slice(0, arrMid);
-		const secondHalf = arr.slice(arrMid);
-		arr = sort(this.merge(firstHalf), this.merge(secondHalf));
-		*/
 		return arr;
 	}
 }

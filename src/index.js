@@ -325,5 +325,28 @@ export default class AllSorts {
 		arr = makeArrFromTree(tree);
 		return arr.filter((item) => item !== undefined);
 	}
+
+	// 19. Merge sort
+	static merge(arr) {
+		if (arr.length <= 1) return arr;
+
+		const sort = (arr1, arr2) => {
+			const result = [];
+			while (arr1.length + arr2.length > 0) {
+				if (arr1[0] <= arr2[0] || arr2.length === 0) result.push(arr1.shift());
+				else if (arr2[0] < arr1[0] || arr1.length === 0) result.push(arr2.shift());
+			}
+			return result;
+		}
+
+		arr = sort(this.merge(arr.slice(0, Math.floor(arr.length / 2))), this.merge(arr.slice(Math.floor(arr.length / 2))));
+		/*
+		const arrMid = Math.floor(arr.length / 2);
+		const firstHalf = arr.slice(0, arrMid);
+		const secondHalf = arr.slice(arrMid);
+		arr = sort(this.merge(firstHalf), this.merge(secondHalf));
+		*/
+		return arr;
+	}
 }
 

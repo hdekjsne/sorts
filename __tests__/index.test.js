@@ -1,4 +1,5 @@
 import AllSorts from "../src/index.js";
+import { merge } from "../src/t.js";
 
 let ex1;
 let ex2;
@@ -114,4 +115,13 @@ test('unbalansed tree sort', () => {
 	expect(AllSorts.tree(ex1)).toStrictEqual(sorted1);
 	expect(AllSorts.tree(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.tree(ex3)).toStrictEqual(ex3);
+});
+test('merge sort', () => {
+	expect(AllSorts.merge([1])).toStrictEqual([1]);
+	expect(AllSorts.merge([1, 6, 2])).toStrictEqual([1, 2, 6]);
+	expect(AllSorts.merge([10, 1])).toStrictEqual([1, 10]);
+	expect(AllSorts.merge([])).toStrictEqual([]);
+	expect(AllSorts.merge(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.merge(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.merge(ex3)).toStrictEqual(ex3);
 });

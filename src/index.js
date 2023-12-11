@@ -344,6 +344,22 @@ export default class AllSorts {
 	}
 
 	// 20. Bottom-up Merge sort
-	static buttomUpMerge (arr) {}
+	static buttomUpMerge (arr) {
+		temp = arr.reduce((acc, item) => [...acc, [item]], []);
+		while (temp.length !== 1) {
+			temp = temp.reduce((acc, item, index, array) => {
+				const chunk = [];
+				if (index === array.length - 1) return [...acc, item];
+				else if (index % 2 !== 0) return acc;
+				while (item.length + array[index + 1].length > 0) {
+					if (item[0] <= array[index + 1][0] || array[index + 1].length === 0) chunk.push(item.shift());
+					else if (array[index + 1][0] < item[0] || item.length === 0) chunk.push(array[index + 1][0].shift());
+				}
+				return chunk;	 
+			}, []);
+		}
+		arr = temp.flat();
+		return arr;
+	}
 }
 

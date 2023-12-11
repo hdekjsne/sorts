@@ -133,4 +133,4 @@ test('buttom-up merge sort', () => {
 	expect(AllSorts.merge(ex1)).toStrictEqual(sorted1);
 	expect(AllSorts.merge(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.merge(ex3)).toStrictEqual(ex3);	
-})
+});

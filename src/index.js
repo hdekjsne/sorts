@@ -364,6 +364,21 @@ export default class AllSorts {
 	}
 
 	// 21. In-place Merge sort
-	static mergeInPlace(arr) {}
+	static mergeInPlace(arr) {
+		arr = arr.reduce((acc, item) => [...acc, [item]], []);
+		for (let i = 0; i < arr.length; i++) {
+			if (i === 0) continue;
+			if (arr[i - 1].length === arr[i].length || i === arr.length - 1) {
+				let chunk = [];
+				while (arr[i - 1].length + arr[i].length > 0) {
+					if (arr[i - 1][0] <= arr[i][0] || arr[i].length === 0) chunk.push(arr[i - 1].shift());
+					else if (arr[i][0] < arr[i - 1][0] || arr[i - 1].length === 0) chunk.push(arr[i].shift());
+				}
+				arr = [...arr.slice(0, i - 1), chunk, ...arr.slice(i + 1)];
+				i = 0;
+			}
+		}
+		return arr.flat();
+	}
 }
 

@@ -343,7 +343,7 @@ export default class AllSorts {
 		return arr;
 	}
 
-	// 20. Bottom-up Merge sort
+	// 20. Bottom-up Merge sort / Iterative Merge sort
 	static mergeIter (arr) {
 		arr = arr.reduce((acc, item) => [...acc, [item]], []);
 		let temp;
@@ -364,5 +364,6 @@ export default class AllSorts {
 	}
 
 	// 21. In-place Merge sort
+	static mergeInPlace(arr) {}
 }
 

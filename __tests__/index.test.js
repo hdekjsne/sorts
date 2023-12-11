@@ -134,3 +134,12 @@ test('buttom-up merge sort', () => {
 	expect(AllSorts.mergeIter(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.mergeIter(ex3)).toStrictEqual(ex3);	
 });
+test('in-place merge sort', () => {
+	expect(AllSorts.mergeInPlace([1])).toStrictEqual([1]);
+	expect(AllSorts.mergeInPlace([1, 6, 2])).toStrictEqual([1, 2, 6]);
+	expect(AllSorts.mergeInPlace([10, 1])).toStrictEqual([1, 10]);
+	expect(AllSorts.mergeInPlace([])).toStrictEqual([]);
+	expect(AllSorts.mergeInPlace(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.mergeInPlace(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.mergeInPlace(ex3)).toStrictEqual(ex3);	
+});

@@ -344,7 +344,7 @@ export default class AllSorts {
 	}
 
 	// 20. Bottom-up Merge sort
-	static buttomUpMerge (arr) {
+	static mergeIter (arr) {
 		arr = arr.reduce((acc, item) => [...acc, [item]], []);
 		let temp;
 		while (arr.length > 1) {

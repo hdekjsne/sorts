@@ -126,11 +126,11 @@ test('merge sort', () => {
 	expect(AllSorts.merge(ex3)).toStrictEqual(ex3);
 });
 test('buttom-up merge sort', () => {
-	expect(AllSorts.buttomUpMerge([1])).toStrictEqual([1]);
-	expect(AllSorts.buttomUpMerge([1, 6, 2])).toStrictEqual([1, 2, 6]);
-	expect(AllSorts.buttomUpMerge([10, 1])).toStrictEqual([1, 10]);
-	expect(AllSorts.buttomUpMerge([])).toStrictEqual([]);
-	expect(AllSorts.buttomUpMerge(ex1)).toStrictEqual(sorted1);
-	expect(AllSorts.buttomUpMerge(ex2)).toStrictEqual(sorted2);
-	expect(AllSorts.buttomUpMerge(ex3)).toStrictEqual(ex3);	
+	expect(AllSorts.mergeIter([1])).toStrictEqual([1]);
+	expect(AllSorts.mergeIter([1, 6, 2])).toStrictEqual([1, 2, 6]);
+	expect(AllSorts.mergeIter([10, 1])).toStrictEqual([1, 10]);
+	expect(AllSorts.mergeIter([])).toStrictEqual([]);
+	expect(AllSorts.mergeIter(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.mergeIter(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.mergeIter(ex3)).toStrictEqual(ex3);	
 });

@@ -342,5 +342,8 @@ export default class AllSorts {
 		arr = sort(this.merge(arr.slice(0, Math.floor(arr.length / 2))), this.merge(arr.slice(Math.floor(arr.length / 2))));
 		return arr;
 	}
+
+	// 20. Bottom-up Merge sort
+	static buttomUpMerge (arr) {}
 }
 

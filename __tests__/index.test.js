@@ -152,3 +152,12 @@ test('counting sort', () => {
 	expect(AllSorts.count(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.count(ex3)).toStrictEqual(ex3);	
 });
+test('list significant digit radix sort', () => {
+	expect(AllSorts.radixLSD([1])).toStrictEqual([1]);
+	expect(AllSorts.radixLSD([1, 6, 2])).toStrictEqual([1, 2, 6]);
+	expect(AllSorts.radixLSD([10, 1])).toStrictEqual([1, 10]);
+	expect(AllSorts.radixLSD([])).toStrictEqual([]);
+	expect(AllSorts.radixLSD(ex1)).toStrictEqual(sorted1);
+	expect(AllSorts.radixLSD(ex2)).toStrictEqual(sorted2);
+	expect(AllSorts.radixLSD(ex3)).toStrictEqual(ex3);	
+});

@@ -404,7 +404,7 @@ export default class AllSorts {
 		return arr;
 	}
 
-	// 23. List Significant Digit Radix sort
+	// 23. Least Significant Digit Radix sort
 	static radixLSD(arr) {
 		const maxRadix = Math.floor(Math.log10(Math.max(...arr)));
 
@@ -429,4 +429,26 @@ export default class AllSorts {
 	}
 
 	// 24. Most Significant Digit Radix sort
+	static radixMSD(arr) {
+		const maxRadix = Math.floor(Math.log10(Math.max(...arr)));
+
+		function bucketAndRebuild(array, radix) {
+			const bucketsObj = { 0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: [] };
+			for (const num of array) {
+				const bucket = Math.floor(num / (10 ** radix)) % 10;
+				bucketsObj[bucket].push(num);
+			}
+			return [
+				...bucketsObj[0], ...bucketsObj[1], ...bucketsObj[2], ...bucketsObj[3], ...bucketsObj[4],
+				...bucketsObj[5], ...bucketsObj[6], ...bucketsObj[7], ...bucketsObj[8], ...bucketsObj[9]
+			];
+		}
+
+		let i = (maxRadix === 1 ? 0 : maxRadix);
+		while (i >= 0) {
+			arr = bucketAndRebuild(arr, i);
+			i -= 1;
+		}
+		return arr;
+	}
 }

@@ -152,7 +152,7 @@ test('counting sort', () => {
 	expect(AllSorts.count(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.count(ex3)).toStrictEqual(ex3);	
 });
-test('list significant digit radix sort', () => {
+test('least significant digit radix sort', () => {
 	expect(AllSorts.radixLSD([1])).toStrictEqual([1]);
 	expect(AllSorts.radixLSD([1, 6, 2])).toStrictEqual([1, 2, 6]);
 	expect(AllSorts.radixLSD([10, 1])).toStrictEqual([1, 10]);
@@ -160,4 +160,12 @@ test('list significant digit radix sort', () => {
 	expect(AllSorts.radixLSD(ex1)).toStrictEqual(sorted1);
 	expect(AllSorts.radixLSD(ex2)).toStrictEqual(sorted2);
 	expect(AllSorts.radixLSD(ex3)).toStrictEqual(ex3);	
+});
+test('most significant digit radix sort', () => {
+	expect(AllSorts.radixMSD([])).toStrictEqual([]);
+	expect(AllSorts.radixMSD([1])).toStrictEqual([1]);
+	expect(AllSorts.radixMSD([2, 91])).toStrictEqual([91, 2]);
+	expect(AllSorts.radixMSD([1, 0, 8])).toStrictEqual([0, 1, 8]);
+	expect(AllSorts.radixMSD([200, 100, 101, 102, 0, 5, 66, 90, 51, 81, 99, 66, 1, 0]))
+		.toStrictEqual([0, 0, 100, 200, 90, 1, 101, 51, 81, 102, 5, 66, 66, 99]);
 });

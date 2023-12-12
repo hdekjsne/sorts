@@ -380,5 +380,28 @@ export default class AllSorts {
 		}
 		return arr.flat();
 	}
+
+	// 22. Counting sort
+	static count(arr) {
+		const max = arr.reduce((acc, item) => item > acc ? item : acc, 0);
+		let counter = [];
+		for (let i = 0; i <= max; i++) counter.push(0);
+		for (let i = 0; i < arr.length; i++) counter[arr[i]] += 1;
+		let i = 0;
+		let j = 0;
+
+		function moveIndex() {
+			while (counter[i] === 0 && i <= counter.length) i += 1;
+		}
+
+		moveIndex();
+		while (i < counter.length) {
+			arr[j] = i;
+			j += 1;
+			counter[i] -= 1;
+			if (counter[i] === 0) moveIndex();
+		}
+		return arr;
+	}
 }
 
